@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0183a3, #02969b, #05c4dd);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen de fondo */
+.background-ship {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1000px;
+    opacity: 0.2;
+    z-index: 5;
+}
+
+/* Contenedor del menú con scroll */
+.menu-container {
+    background-color: rgba(128, 222, 234, 0.9); /* Color con transparencia */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 80%;
+    max-height: 90vh; /* tamaño máximo */
+    min-height: 300px; 
+    overflow-y: auto; /* Permite el scroll */    
+}
+
+
+
