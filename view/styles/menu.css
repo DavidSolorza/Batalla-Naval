@@ -38,3 +38,9 @@
 .menu-items a:hover {
     background-color: #00838f;
 }
+
+.icons{
+    width: 27px; /* Reduce el tamaño del icono */
+    height: 27px;
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+}
