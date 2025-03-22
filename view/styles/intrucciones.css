@@ -34,13 +34,37 @@ ul {
 }
 
 ul li {
-  
     margin: 5px 0;
     border-radius: 8px;
     color: #00000098;
     font-size: large;
 }
 
+.icons{
+    width: 27px; /* Reduce el tamaño del icono */
+    height: 27px;
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+}
+
+.menu-items li {
+    margin: 15px 0;
+    opacity: 0.7;
+    justify-content: flex-end; 
+}
+
+.menu-items a {
+    text-decoration: none;
+    background-color: #004d40;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: background 0.3s;
+    display: block;
+}
+.menu-items a:hover {
+    background-color: #00838f;
+}
 
 .menu-title {
     font-size: 2em;
