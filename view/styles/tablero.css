@@ -1,0 +1,32 @@
+.tablero {
+    grid-template-columns: repeat(0, 30%);
+    grid-template-rows: repeat(0, 0);
+    gap: 0;
+    align-items: center;
+    justify-content: end;
+    background-position: center
+}
+.celda {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0px;
+    font-weight: bold;
+    border: white;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.celda:hover {
+    background-color: #f0f0f0;
+}
+
+.juego{
+    padding: 0;
+    justify-content: center;
+    align-items: center;   
+    margin: 0;  
+}
