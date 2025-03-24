@@ -1,5 +1,3 @@
-
-
 .menu-container {
     background-color: rgba(128, 222, 234, 0.9);
     padding: 30px;
@@ -41,9 +39,9 @@ ul li {
 }
 
 .icons{
-    width: 27px; /* Reduce el tamaño del icono */
+    width: 27px; 
     height: 27px;
-    margin-right: 8px; /* Espacio entre la imagen y el texto */
+    margin-right: 8px; 
 }
 
 .menu-items li {

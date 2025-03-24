@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ubicacion</title>
+    <title>Modos de juego</title>
     <link rel="stylesheet" href="styles/background.css">
     <link rel="stylesheet" href="styles/tablero.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
@@ -14,16 +15,14 @@
 
 </head>
 <body>
-    <img src="../assents/barcos.webp" class="background-ship" alt="Barco de fondo">
-            <div class="row">
-                <div class="col-md-12 col-12 juego">
-                    <div id="tableroContainer"></div>                
-                </div>
-                <div class="row juego">
-                    <div class="col-md-12 col-12">
-                        <h4 id="mensaje"></h4> 
-                    </div>
-                </div>
-            </div>
+    <img src="../assents/barcos.webp" class="background-ship" alt="Barco de fondo"></img>
+    <div class="juego">
+        <h4 id="mensaje">Crea tu estrategia</h4>
+        <div id="tableroContainer"></div>
+        <div class="botones">
+            <button><img class="icons" src="../assents/keyboard_return_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" alt="return">Salir</button>
+            <button><img class="icons" src="../assents/play_arrow_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="robot">Iniciar Juego</button>
+        </div>
+    </div>
 </body>
 </html>
