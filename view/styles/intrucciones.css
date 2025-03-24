@@ -70,3 +70,7 @@ ul li {
     color: #006064;
     margin-bottom: 20px;
 }
+
+.boton{
+    z-index: 10;
+}

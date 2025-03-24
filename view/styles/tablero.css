@@ -35,26 +35,37 @@
     color: white;
 }
 
-.botones {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
+.menu-items li {
+    margin: 15px 0;
+    opacity: 0.7;
+    justify-content: flex-end; 
+    display: inline-block;
 }
 
-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
+.menu-items a {
+    text-decoration: none;
     background-color: #004d40;
     color: white;
-    border-radius: px;
-    transition: background-color 0.3s;
-
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: background 0.3s;
+    
 }
 
-button:hover {
-    background-color: #0056b3;
+.botones:hover {
+    background-color: #00838f;
+}
+
+.botones{
+    z-index: 10;
+    
+  
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 .icons{
