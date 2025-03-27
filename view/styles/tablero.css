@@ -50,17 +50,16 @@
     border-radius: 10px;
     font-size: 1.2em;
     transition: background 0.3s;
+    display: block;
     
 }
 
-.botones:hover {
+.menu-items a:hover {
     background-color: #00838f;
 }
 
 .botones{
-    z-index: 10;
-    
-  
+    z-index: 10; 
 }
 
 ul {
