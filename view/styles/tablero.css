@@ -1,74 +1,37 @@
-#tableroContainer {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: max-content; 
-    margin: auto;
+#board{
+    width: 300px;
+    height: 300px;
 }
-
-.grid {
+.myRow{
+    width: 300px;
+    height: 30px;
+}
+.grid{
     width: 30px;
     height: 30px;
-    border: 0.1px solid rgb(46, 190, 183);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    background-color: rgb(225, 231, 233);
+    border: black 0.5px solid;
+    display: inline-block
 }
-
-.juego {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 10px; 
-}
-
-#mensaje {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 20px;
-    color: white;
-}
-
-.menu-items li {
-    margin: 15px 0;
-    opacity: 0.7;
-    justify-content: flex-end; 
+.position{
     display: inline-block;
 }
-
-.menu-items a {
-    text-decoration: none;
-    background-color: #004d40;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 1.2em;
-    transition: background 0.3s;
-    display: block;
-    
+.horizontal{
+    width: 35px;
+    height: 15px;
+    border: black 0.5px solid;
 }
-
-.menu-items a:hover {
-    background-color: #00838f;
+.vertical{
+    width: 15px;
+    height: 35px;
+    border: black 0.5px solid;
+    margin-top: 5px;
 }
-
-.botones{
-    z-index: 10; 
+.selected{
+    background-color: blue;
 }
-
-ul {
-    list-style: none;
-    padding: 0;
+.hit{
+    background-color: red;
 }
-
-.icons{
-    width: 27px; 
-    height: 27px;
-    margin-right: 8px; 
+.miss{
+    background-color: gray;
 }
