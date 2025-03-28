@@ -1,6 +1,14 @@
+body{
+    background-color: #CEDEEA;
+    text-align: center;
+}
 #board{
-    width: 300px;
-    height: 300px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: max-content; 
+    margin: auto;
+    padding: 10px;
 }
 .myRow{
     width: 300px;
@@ -9,8 +17,14 @@
 .grid{
     width: 30px;
     height: 30px;
-    border: black 0.5px solid;
-    display: inline-block
+    border: 0.1px solid rgb(46, 190, 183);
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: rgba(225, 231, 233, 0.664);
+
 }
 .position{
     display: inline-block;
@@ -27,7 +41,7 @@
     margin-top: 5px;
 }
 .selected{
-    background-color: blue;
+    background-color: rgba(59, 59, 206, 0.795);
 }
 .hit{
     background-color: red;
