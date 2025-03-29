@@ -8,13 +8,22 @@
     <title>Configuracion</title>
     <link rel="icon" type="image/png" href="../assents/a0f7d469f729a332dfa5f8b1ccd60a2a.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/tamanio.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../controller/tamanioTablero.js"></script></script>
 
+
 </head>
 <body>
     <img src="../assents/barcos.webp" class="background-ship" alt="Barco de fondo">
+    <div id="selectionModal" class="modal align-items-center">
+        <div class="modal-content row">
+            <h2>¿Cómo quieres ubicar los barcos?</h2>
+            <button id="manualBtn" >Manual</button>
+            <button id="autoBtn" >Automático</button>
+        </div>
+    </div>
     <div class="container d-flex justify-content-center align-items-center h-100">
         <div class="menu-container text-center">
             <div class="menu-title">¡Bienvenido de nuevo!</div>
