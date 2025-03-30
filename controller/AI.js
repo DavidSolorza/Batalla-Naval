@@ -1,5 +1,4 @@
 
-console.log("Tamaño del tablero:", size);
 
 window.selectPositionRandom = function() {
     for (let i = 0; i < quantityShipPC.length; i++) {
@@ -43,13 +42,20 @@ function checkShot(event)  {
     let gridID = grid.id.split(",");
     let x = parseInt(gridID[0]);
     let y = parseInt(gridID[1]);
+    const explosion = document.getElementById("explosion");
+    const agua = document.getElementById("agua");
+    
     if (matrixAttack[x][y] === "ship") {
         matrixAttack[x][y] = "hit";
         document.getElementById(`${x},${y},pc`).classList.add("hit");
+        explosion.currentTime = 0;
+        explosion.play();
         checkWinner(matrixAttack, "player");
     } else {
         matrixAttack[x][y] = "miss";
         document.getElementById(`${x},${y},pc`).classList.add("miss");
+        agua.currentTime = 1;
+        agua.play()
         shotPc();
     }
 }
@@ -61,6 +67,9 @@ let huntingMode = false;
 
 function shotPc() {
     let x, y;
+    const agua = document.getElementById("agua");
+    const explosion = document.getElementById("explosion");
+
 
     if (huntingMode && lastHits.length > 0) {
         // Seguir atacando en la dirección actual
@@ -77,6 +86,8 @@ function shotPc() {
     if (matrix[x][y] === "ship") {
         matrix[x][y] = "hit";
         document.getElementById(`${x},${y},player`).classList.add("hit");
+        explosion.currentTime = 0; // Reinicia el sonido si ya estaba reproduciéndose
+        explosion.play();
         lastHits.push([x, y]); // Guardar golpe
         huntingMode = true; // Activar modo caza
         checkWinner(matrix, "pc");
@@ -86,7 +97,8 @@ function shotPc() {
     } else {
         matrix[x][y] = "miss";
         document.getElementById(`${x},${y},player`).classList.add("miss");
-        
+        agua.currentTime = 1;
+        agua.play();
         if (huntingMode) {
             changeDirection(); // Cambia de dirección si falló en modo caza
         }

@@ -5,8 +5,8 @@ let matrix = [];
 let matrixAttack = [];
 const sizeShip = [5, 4, 3, 2];
 const positionArray = ["horizontal", "vertical"];
-let quantityShip = [1, 1, 1, 2];
-let quantityShipPC = [1, 1, 1, 2];
+let quantityShip = [1, 1, 2, 2];
+let quantityShipPC = [1, 1, 2, 2];
 let ship = {};
 let shipRandom = {};
 
@@ -107,11 +107,12 @@ placeShipsAutomatically(matrix, quantityShip, "player");
 
 // Iniciar el juego y crear el tablero de la PC
 function startGame() {
+    if (boardAttack.children.length > 0) return;
     createMatrix(boardAttack, matrixAttack, checkShot, "pc");
     window.selectPositionRandom();
     document.querySelector("#button").disabled = true;
 }
 
-document.querySelector(".nuevaEstrategia").addEventListener("click", () => {
+document.querySelector(".estrategiaBtn").addEventListener("click", () => {
     resetShips(matrix, "player"); // Reposicionar barcos del jugador
 });
