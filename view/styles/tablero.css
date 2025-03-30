@@ -53,7 +53,7 @@ body{
     background-color: gray;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .grid {
         width: 25px;
         height: 25px;
