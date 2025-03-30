@@ -79,16 +79,35 @@ h1 {
 }
 
 .icons{
-    width: 27px; /* Reduce el tamaño del icono */
+    width: 27px; 
     height: 27px;
-    margin-right: 8px; /* Espacio entre la imagen y el texto */
+    margin-right: 8px; 
 }
 
-/* Contenedor del botón */
+
 .menu-container {
-    width: fit-content; /* Ajusta el tamaño al contenido */
-    margin: 20px auto; /* Centra el contenedor */
+    width: fit-content; 
+    margin: 20px auto; 
     padding: 10px;
     display: flex;
     justify-content: center;
+}
+
+.bandera {
+    width: 30px;   
+    height: auto;  
+    border-radius: 5px; 
+    display: block; 
+    margin: auto;
+}
+
+.pais-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+}
+
+.bandera {
+    width: 25px;
+    height: auto;
 }

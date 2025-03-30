@@ -4,20 +4,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         console.log("Obteniendo datos del ranking...");
 
+        // Obtener la lista de países
         const countriesResponse = await fetch(CONFIG.API_COUNTRIES);
         if (!countriesResponse.ok) throw new Error(`Error al obtener países: ${countriesResponse.status}`);
 
-        const countriesArray = await countriesResponse.json(); // Recibimos el array
+        const countriesArray = await countriesResponse.json();
         console.log("Lista de países recibida:", countriesArray);
 
         const countryMap = {};
         countriesArray.forEach(countryObj => {
-            const code = Object.keys(countryObj)[0].toLowerCase(); // Convertir la clave a minúsculas
-            countryMap[code] = countryObj[code]; // Guardar en el diccionario
+            const code = Object.keys(countryObj)[0].toLowerCase();
+            countryMap[code] = countryObj[code];
         });
 
         console.log("Mapa de países procesado:", countryMap);
 
+        // Obtener el ranking
         const response = await fetch(CONFIG.API_RANKING);
         if (!response.ok) throw new Error(`Error en la petición: ${response.status}`);
 
@@ -29,11 +31,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         const tabla = document.getElementById("tablaRanking");
-        tabla.innerHTML = ""; // Limpiar antes de insertar nuevos datos
+        tabla.innerHTML = "";
 
         rankingData.forEach((item, index) => {
-            const countryCode = item.country_code ? item.country_code.toLowerCase() : ""; // Convertir código del ranking a minúsculas
-            const countryName = countryMap[countryCode] || "Desconocido"; // Buscar en el diccionario
+            const countryCode = item.country_code ? item.country_code.toLowerCase() : "";
+            const countryName = countryMap[countryCode] || "Desconocido";
+            const banderaURL = `https://flagsapi.com/${countryCode.toUpperCase()}/flat/64.png`;
+            const fechaHora = item.fechaHora ? new Date(item.fechaHora).toLocaleString() : "Desconocido";
 
             console.log(`Código: ${countryCode} -> Nombre: ${countryName}`);
 
@@ -42,7 +46,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <td>${index + 1}</td>
                 <td>${item.nick_name || "Sin nombre"}</td>
                 <td>${item.score ?? "0"}</td>
-                <td>${countryName}</td>
+                <td class="pais-container">
+                    <span>${countryName}</span>
+                    <img src="${banderaURL}" alt="${countryName}" class="bandera"/>
+                </td>
+                <td>${fechaHora}</td>
             `;
             tabla.appendChild(fila);
         });
