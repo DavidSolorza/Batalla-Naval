@@ -1,17 +1,94 @@
-table {
-    width: 50%;
-    margin: 20px auto;
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
+/* Estilos para la tabla */
+.ranking-table {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
     border-collapse: collapse;
-    background: white;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-th {
-    background: #007bff;
+    background-color: #4b4949ce ;
     color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para las celdas */
+.ranking-table th,
+.ranking-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #007bff ;
+    opacity: 0.;
+}
+
+/* Estilos para el encabezado */
+.ranking-table thead {
+    background-color: #302828;
+}
+
+.ranking-table th {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Efecto de hover en las filas */
+.ranking-table tbody tr:hover {
+    background-color: #333;
+    transition: 0.3s;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 15px 0;
+}
+
+.menu-items a {
+    text-decoration: none;
+    background-color: #004d40;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: background 0.3s;
+    display: block;
+}
+
+.menu-items a:hover {
+    background-color: #00838f;
+}
+
+.icons{
+    width: 27px; /* Reduce el tamaño del icono */
+    height: 27px;
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+}
+
+/* Contenedor del botón */
+.menu-container {
+    width: fit-content; /* Ajusta el tamaño al contenido */
+    margin: 20px auto; /* Centra el contenedor */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }

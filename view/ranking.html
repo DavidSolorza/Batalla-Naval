@@ -9,27 +9,36 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../controller/ranking.js"></script>
-    <script src="../controller/Ranking.js" type="module"></script>
+    <script src="../controller/ranking.js" type="module"></script>
     <title>Ranking</title>
 </head>
 <body>
-    <img src="../assents/barcos.webp" class="background-ship" alt="Barco de fondo">
-    <h1>🏆 Ranking de Jugadores</h1>
+    <div class="container text-center mt-5">
+        <h1 class="mb-4">🏆 Ranking 🏆</h1>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Posición</th>
-                <th>Nombre</th>
-                <th>Puntaje</th>
-                <th>País</th>
-            </tr>
-        </thead>
-        <tbody id="tablaRanking">
-            <!-- Aquí se insertarán los datos dinámicamente -->
-        </tbody>
-    </table>
-
+        <div class="table-container">
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Nombre</th>
+                        <th>Puntaje</th>
+                        <th>País</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaRanking"></tbody>
+            </table>
+        </div>
+        <div class="menu-container">
+            <ul class="menu-items p-0">
+                <li>
+                    <a href="index.html" class="btn btn-block">
+                        <img class="icons" src="../assents/keyboard_return_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" alt="volver">
+                        Volver
+                    </a>
+                </li>
+            </ul>
+        </div> 
+    </div>
 </body>
 </html>
