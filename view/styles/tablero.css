@@ -2,7 +2,7 @@ body{
     background-color: #CEDEEA;
     text-align: center;
 }
-#board{
+#board, #boardAttack{
     display: grid;
     align-items: center;
     justify-content: center;
@@ -29,6 +29,14 @@ body{
 }
 .position{
     display: inline-block;
+}
+
+.horizontal{
+    width: 35px;
+    height: 15px;
+    border: black 0.5px solid;
+}
+.vertical{
     width: 15px;
     height: 35px;
     border: black 0.5px solid;
@@ -51,3 +59,4 @@ body{
         height: 25px;
     }
 }
+

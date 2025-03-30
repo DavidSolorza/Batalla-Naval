@@ -11,7 +11,7 @@ let ship = {};
 let shipRandom = {};
 
 const urlParams = new URLSearchParams(window.location.search);
-let size = parseInt(urlParams.get("size")) ;
+let size = parseInt(urlParams.get("size"))||10 ;
 console.log("Tamaño del tablero:", size);
 
 function createMatrix(boardType, matrixType, func, type) {
