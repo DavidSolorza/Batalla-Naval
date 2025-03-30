@@ -154,7 +154,7 @@ function isValid(x, y) {
 function checkWinner(matrix, player) {
     if (!matrix.flat().includes("ship")) {
         alert(player === "pc" ? "Ha ganado el PC" : "¡GANASTE!");
+        window.location.href = "Ranking.html"; 
     }
 }
-
 
