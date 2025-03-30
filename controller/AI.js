@@ -1,5 +1,4 @@
 
-console.log("Tamaño del tablero:", size);
 
 window.selectPositionRandom = function() {
     for (let i = 0; i < quantityShipPC.length; i++) {

@@ -5,13 +5,13 @@ let matrix = [];
 let matrixAttack = [];
 const sizeShip = [5, 4, 3, 2];
 const positionArray = ["horizontal", "vertical"];
-let quantityShip = [1, 1, 1, 2];
-let quantityShipPC = [1, 1, 1, 2];
+let quantityShip = [1, 1, 2, 2];
+let quantityShipPC = [1, 1, 2, 2];
 let ship = {};
 let shipRandom = {};
 
 const urlParams = new URLSearchParams(window.location.search);
-let size = parseInt(urlParams.get("size")) || 10;
+let size = parseInt(urlParams.get("size")) ;
 console.log("Tamaño del tablero:", size);
 
 function createMatrix(boardType, matrixType, func, type) {

@@ -11,8 +11,9 @@ body{
     padding: 10px;
 }
 .myRow{
-    width: 300px;
-    height: 30px;
+    display: flex;
+    width: auto;
+    height: auto;
 }
 .grid{
     width: 30px;
@@ -28,18 +29,12 @@ body{
 }
 .position{
     display: inline-block;
-}
-.horizontal{
-    width: 35px;
-    height: 15px;
-    border: black 0.5px solid;
-}
-.vertical{
     width: 15px;
     height: 35px;
     border: black 0.5px solid;
     margin-top: 5px;
 }
+
 .selected{
     background-color: rgba(59, 59, 206, 0.795);
 }
@@ -48,4 +43,11 @@ body{
 }
 .miss{
     background-color: gray;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        width: 25px;
+        height: 25px;
+    }
 }
