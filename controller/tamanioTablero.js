@@ -19,11 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Mostrar el modal
-        selectionModal.style.display = "flex";
-        let sizeParam = `size=${num}`;
-
-        manualBtn.onclick = () => iniciarJuego(false, sizeParam);
-        autoBtn.onclick = () => iniciarJuego(true, sizeParam);
+        function mostrarModalSeleccion(num) {
+            selectionModal.style.display = "flex";
+            let sizeParam = `size=${num}`;
+        
+            manualBtn.onclick = () => iniciarJuego(false, sizeParam);
+            autoBtn.onclick = () => iniciarJuego(true, sizeParam);
+        }
+        
     });
 
     function iniciarJuego(useAuto, sizeParam) {

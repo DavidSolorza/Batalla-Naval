@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (!nickname || !countryName || !boardSize) {
             alert("Por favor, completa todos los campos.");
-            return;
+        } else {
+            mostrarModalSeleccion(boardSize); // Llamar a la función que muestra el modal
         }
 
         // Buscar el código del país basado en el nombre ingresado
@@ -46,6 +47,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         localStorage.setItem("playerData", JSON.stringify(playerData));
 
         console.log("Datos guardados:", playerData);
-        alert("Datos guardados. ¡Comienza el juego!");
     });
 });
