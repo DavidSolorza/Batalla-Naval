@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectionModal = document.getElementById("selectionModal");
     let manualBtn = document.getElementById("manualBtn");
     let autoBtn = document.getElementById("autoBtn");
-   
 
     selectionModal.style.display = "none"; // Ocultar modal
     
     boton.addEventListener("click", function () {
-        
         let num = input.value.trim();
         
         if (num < 10 || num > 20) {
@@ -18,19 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Mostrar el modal
-        function mostrarModalSeleccion(num) {
-            selectionModal.style.display = "flex";
-            let sizeParam = `size=${num}`;
-        
-            manualBtn.onclick = () => iniciarJuego(false, sizeParam);
-            autoBtn.onclick = () => iniciarJuego(true, sizeParam);
-        }
-        
+        // Llamar la función que muestra el modal
+        mostrarModalSeleccion(num);
     });
+
+    // ✅ Hacemos esta función global
+    window.mostrarModalSeleccion = function (num) {
+        selectionModal.style.display = "flex";
+        let sizeParam = `size=${num}`;
+    
+        manualBtn.onclick = () => iniciarJuego(false, sizeParam);
+        autoBtn.onclick = () => iniciarJuego(true, sizeParam);
+    }
 
     function iniciarJuego(useAuto, sizeParam) {
         // Redirigir a modoCmaquina.html con los parámetros
         window.location.href = `modoCmaquina.html?${sizeParam}&auto=${useAuto}`;
     }
-})
+});

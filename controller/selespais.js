@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (!nickname || !countryName || !boardSize) {
             alert("Por favor, completa todos los campos.");
+            return;
         } else {
             mostrarModalSeleccion(boardSize); // Llamar a la función que muestra el modal
         }
