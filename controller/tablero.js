@@ -63,7 +63,7 @@ function selectPosition(event) {
             if (y + (ship.size - 1) < size) {
                 for (let i = y; i < y + ship.size; i++) {
                     matrix[x][i] = "ship";
-                    document.getElementById(`${x},${i},player`).classList.add("selected");
+                    document.getElementById(`${x},${i},player`).classList.add("selected", `ship-${ship.size}`);
                 }
                 quantityShip[ship.id] -= 1;
                 ship = {};
@@ -74,7 +74,7 @@ function selectPosition(event) {
             if (x + (ship.size - 1) < size) {
                 for (let i = x; i < x + ship.size; i++) {
                     matrix[i][y] = "ship";
-                    document.getElementById(`${i},${y},player`).classList.add("selected");
+                    document.getElementById(`${i},${y},player`).classList.add("selected", `ship-${ship.size}`);
                 }
                 quantityShip[ship.id] -= 1;
                 ship = {};

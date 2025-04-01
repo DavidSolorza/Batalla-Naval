@@ -43,11 +43,25 @@ body{
     margin-top: 5px;
 }
 
-.selected{
-    background-color: rgba(59, 59, 206, 0.795);
+
+
+.ship-1 { 
+    background-color: #33FF57 ; 
+}
+.ship-2 { 
+    background-color: #3357FF ; 
+}
+.ship-3 { 
+    background-color: #FF33A8 ; 
+}
+.ship-4 { 
+    background-color: #e0ef10 ; 
+}
+.ship-5 { 
+    background-color: #8e08ac ; 
 }
 .hit{
-    background-color: red;
+    background-color: red !important;
 }
 .miss{
     background-color: gray;
