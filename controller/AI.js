@@ -37,7 +37,56 @@ function random(i) {
         return random(i);
     }
 }
-function checkShot(event)  {
+class Puntuacion {
+    constructor() {
+        this.puntos = 0;
+    }
+
+    acierto() {
+        this.puntos += 10;
+        this.actualizarPuntaje();
+    }
+
+    fallo(tablero, x, y) {
+        if (this.estaCercaDeBarco(tablero, x, y)) {
+            this.puntos -= 3;
+        } else {
+            this.puntos -= 1;
+        }
+        this.actualizarPuntaje();
+    }
+
+    estaCercaDeBarco(tablero, x, y) {
+        const direcciones = [
+            [-1, -1], [-1, 0], [-1, 1],
+            [0, -1],         [0, 1],
+            [1, -1], [1, 0], [1, 1]
+        ];
+
+        for (let [dx, dy] of direcciones) {
+            let nx = x + dx;
+            let ny = y + dy;
+
+            if (nx >= 0 && ny >= 0 && nx < tablero.length && ny < tablero[0].length) {
+                if (tablero[nx][ny] === "ship") {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    actualizarPuntaje() {
+        const scoreElement = document.getElementById("player-score");
+        if (scoreElement) {
+            scoreElement.textContent = this.puntos;
+        }
+    }
+}
+
+const puntuacion = new Puntuacion();
+
+function checkShot(event) {
     let grid = event.target;
     let gridID = grid.id.split(",");
     let x = parseInt(gridID[0]);
@@ -50,15 +99,18 @@ function checkShot(event)  {
         document.getElementById(`${x},${y},pc`).classList.add("hit");
         explosion.currentTime = 0;
         explosion.play();
+        puntuacion.acierto();
         checkWinner(matrixAttack, "player");
     } else {
         matrixAttack[x][y] = "miss";
         document.getElementById(`${x},${y},pc`).classList.add("miss");
         agua.currentTime = 1;
-        agua.play()
+        agua.play();
+        puntuacion.fallo(matrixAttack, x, y);
         shotPc();
     }
 }
+
 
 let lastHits = []; // Guarda los golpes recientes en un barco
 let sunkShips = []; // Guarda las coordenadas de barcos hundidos
@@ -228,12 +280,64 @@ function checkIfShipSunk() {
     return true; // Si no encuentra más partes del barco, lo hundió
 }
 
-
-
 function checkWinner(matrix, player) {
     if (!matrix.flat().includes("ship")) {
         alert(player === "pc" ? "Ha ganado el PC" : "¡GANASTE!");
-        window.location.href = "Ranking.html"; 
+
+        console.log("Puntos finales:", puntuacion.puntos);
+
+        // Recuperar los datos almacenados en localStorage
+        let storedPlayerData = localStorage.getItem("playerData");
+        if (!storedPlayerData) {
+            console.error("No hay datos del jugador en localStorage.");
+            return;
+        }
+
+        let playerData = JSON.parse(storedPlayerData);
+
+        // Enviar los datos al backend con la puntuación actualizada
+        sendScore(playerData.nick_name, puntuacion.puntos, playerData.country_code);
     }
 }
 
+
+
+function updateScore(points) {
+    let storedPlayerData = localStorage.getItem("playerData");
+    if (!storedPlayerData) return;
+
+    let playerData = JSON.parse(storedPlayerData);
+    playerData.score += points; // Sumar los puntos ganados
+    localStorage.setItem("playerData", JSON.stringify(playerData));
+
+    console.log("Nuevo puntaje:", playerData.score);
+}
+
+
+async function sendScore(nickName, score, countryCode) {
+    const data = {
+        "nick_name": nickName,
+        "score": score,
+        "country_code": countryCode
+    };
+
+    try {
+        const response = await fetch('http://127.0.0.1:5000/score-recorder', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al enviar los datos');
+        }
+
+        const result = await response.json();
+        console.log('Respuesta del servidor:', result);
+
+        // Redirigir al ranking después de enviar los datos
+        window.location.href = "Ranking.html";  
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}

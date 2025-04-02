@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             const countryCode = item.country_code ? item.country_code.toLowerCase() : "";
             const countryName = countryMap[countryCode] || "Desconocido";
             const banderaURL = `https://flagsapi.com/${countryCode.toUpperCase()}/flat/64.png`;
-            const fechaHora = item.fechaHora ? new Date(item.fechaHora).toLocaleString() : "Desconocido";
-
+        
             console.log(`Código: ${countryCode} -> Nombre: ${countryName}`);
-
+        
             const fila = document.createElement("tr");
+        
             fila.innerHTML = `
                 <td>${index + 1}</td>
                 <td>${item.nick_name || "Sin nombre"}</td>
@@ -50,10 +50,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <span>${countryName}</span>
                     <img src="${banderaURL}" alt="${countryName}" class="bandera"/>
                 </td>
-                <td>${fechaHora}</td>
             `;
+        
             tabla.appendChild(fila);
         });
+        
 
         console.log("Ranking actualizado correctamente.");
     } catch (error) {

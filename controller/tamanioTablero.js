@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Llamar la función que muestra el modal
-        mostrarModalSeleccion(num);
+        ;
     });
 
     // ✅ Hacemos esta función global

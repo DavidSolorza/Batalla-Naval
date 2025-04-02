@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" type="image/png" href="../assents/a0f7d469f729a332dfa5f8b1ccd60a2a.png">
-    <link rel="stylesheet" href="styles/background.css">
     <link rel="stylesheet" href="styles/tablero.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
@@ -13,9 +12,21 @@
     <audio id="explosion" src="../assents/sonidos/Explosion.mp3" preload="auto"></audio>
     <audio id="agua" src="../assents/sonidos/Agua.mp3" preload="auto"></audio>
 </head>
+
 <body>
-   
-    <div class="container">
+    <header>
+        <div class="container">
+            <div class="player-info">
+                <span id="player-name">Jugador</span>
+                <span id="player-country">País</span>
+            </div>
+            <div class="score-container">
+                <span id="player-score">0</span>
+            </div>
+        </div>
+    </header> 
+    
+    <div class="containers">
         <button id="button" class="estrategiaBtn">Otra estrategia</button>
 
         <div class="row">

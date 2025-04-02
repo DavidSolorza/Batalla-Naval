@@ -1,7 +1,3 @@
-body{
-    background-color: #CEDEEA;
-    text-align: center;
-}
 #board, #boardAttack{
     display: grid;
     align-items: center;
@@ -58,5 +54,87 @@ body{
         width: 25px;
         height: 25px;
     }
+}
+
+.containers {
+    padding: 70px 0 0 0; /* Espacio para el navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+
+header {
+    position: fixed; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 60%; 
+    height: 70px;
+    background-color: #00838f; 
+    color: rgb(255, 255, 255); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    z-index: 1000; 
+    border-radius: 20px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column; /* Para que el nombre y el país estén uno debajo del otro */
+    align-items: flex-start; /* Alinea el texto a la izquierda */
+    font-size: 16px; /* Tamaño de fuente para el nombre y el país */
+}
+
+#player-name {
+    font-weight: bold; /* Hace que el nombre sea más destacado */
+    font-size: 18px; /* Tamaño del nombre */
+}
+
+#player-country {
+    font-style: italic; /* El país en cursiva */
+    font-size: 14px; /* Tamaño del país */
+}
+
+.score-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#player-score {
+    font-size: 24px; /* Tamaño del puntaje */
+    font-weight: bold; /* Hace que el puntaje sea destacado */
+}
+
+.score-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Hace el círculo redondo */
+    background-color: #ff5722; /* Color de fondo del círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0183a3, #02969b, #05c4dd);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
 }
 
