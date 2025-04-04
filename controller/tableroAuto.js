@@ -55,6 +55,7 @@ function randomPlacement(matrixType, shipIndex, type) {
     let position = positionArray[Math.floor(Math.random() * positionArray.length)];
     let x = Math.floor(Math.random() * size);
     let y = Math.floor(Math.random() * size);
+    let shipClass = `ship-${shipSize}`;
 
     // Verificar si el barco cabe y no se superpone
     if (position === "horizontal" && y + shipSize <= size) {
@@ -63,7 +64,7 @@ function randomPlacement(matrixType, shipIndex, type) {
         }
         for (let j = y; j < y + shipSize; j++) {
             matrixType[x][j] = "ship";
-            document.getElementById(`${x},${j},${type}`).classList.add("selected");
+            document.getElementById(`${x},${j},${type}`).classList.add("selected", shipClass);
         }
         return true;
     }
@@ -74,7 +75,7 @@ function randomPlacement(matrixType, shipIndex, type) {
         }
         for (let j = x; j < x + shipSize; j++) {
             matrixType[j][y] = "ship";
-            document.getElementById(`${j},${y},${type}`).classList.add("selected");
+            document.getElementById(`${j},${y},${type}`).classList.add("selected", shipClass);
         }
         return true;
     }
@@ -114,5 +115,18 @@ function startGame() {
 }
 
 document.querySelector(".estrategiaBtn").addEventListener("click", () => {
-    resetShips(matrix, "player"); // Reposicionar barcos del jugador
+    resetBoard();
+    placeShipsAutomatically(matrix, quantityShip, "player");
 });
+
+function resetBoard() {
+    // Vaciar el contenido del tablero
+    board.innerHTML = "";
+
+    // Reiniciar la matriz vacía
+    matrix = Array.from({ length: size }, () => Array(size).fill(""));
+
+    // Volver a crear el tablero con eventos
+    createMatrix(board, matrix, randomPlacement, "player");
+}
+
