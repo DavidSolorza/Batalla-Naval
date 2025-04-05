@@ -6,6 +6,9 @@
     margin: auto;
     padding: 10px;
 }
+#boardAttack .grid {
+    cursor: url(../../assents/cursor_32.png) 16 16, crosshair;
+}
 
 .row {
     display: flex;
