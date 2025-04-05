@@ -59,6 +59,7 @@ function selectPosition(event) {
         let gridID = grid.id.split(",");
         let x = parseInt(gridID[0]);
         let y = parseInt(gridID[1]);
+        
         if (ship.position === "horizontal") {
             if (y + (ship.size - 1) < size) {
                 for (let i = y; i < y + ship.size; i++) {
