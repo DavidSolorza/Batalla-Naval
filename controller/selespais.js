@@ -2,6 +2,7 @@ import CONFIG from "../config.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const countryInput = document.getElementById("nacionalidad");
+    const cityInput = document.getElementById("cityName"); // ⬅️ este input debe existir en el HTML
     const playButton = document.getElementById("jugar");
     let countryMap = {};
 
@@ -11,42 +12,40 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const countriesArray = await response.json();
 
-        // Crear un mapa de países para buscar por nombre
         countriesArray.forEach(countryObj => {
-            const code = Object.keys(countryObj)[0].toLowerCase(); // Código del país en minúsculas
-            const name = countryObj[code].toLowerCase(); // Nombre del país en minúsculas
-            countryMap[name] = code; // Relaciona el nombre con su código
+            const code = Object.keys(countryObj)[0].toLowerCase();
+            const name = countryObj[code].toLowerCase();
+            countryMap[name] = code;
         });
 
     } catch (error) {
         console.error("Error cargando países:", error);
     }
 
-    // Guardar datos antes de jugar
     playButton.addEventListener("click", () => {
         const nickname = document.getElementById("nombre").value.trim();
-        const countryName = countryInput.value.trim().toLowerCase(); // Convertir a minúsculas
+        const countryName = countryInput.value.trim().toLowerCase();
+        const cityName = cityInput.value.trim(); // ⬅️ aquí está la ciudad
         const boardSize = document.getElementById("tamanio").value.trim();
 
-        if (!nickname || !countryName || !boardSize) {
+        if (!nickname || !countryName || !boardSize || !cityName) {
             alert("Por favor, completa todos los campos.");
             return;
         } else {
-            mostrarModalSeleccion(boardSize); // Llamar a la función que muestra el modal
+            mostrarModalSeleccion(boardSize);
         }
 
-        // Buscar el código del país basado en el nombre ingresado
-        const countryCode = countryMap[countryName] || "desconocido"; // Si no existe, asigna "desconocido"
+        const countryCode = countryMap[countryName] || "desconocido";
 
-        // Guardar temporalmente en LocalStorage (se enviará al backend después)
+        // ✅ Guardamos la ciudad también
         const playerData = {
             nick_name: nickname,
-            score: 0, // Se actualizará después del juego
-            country_code: countryCode
+            score: 0,
+            country_code: countryCode,
+            city_name: cityName
         };
 
         localStorage.setItem("playerData", JSON.stringify(playerData));
-
-        console.log("Datos guardados:", playerData);
+        console.log("✅ Datos guardados en localStorage:", playerData);
     });
 });

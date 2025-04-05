@@ -114,55 +114,39 @@ header {
     height: 70px;
     background-color: #00838f; 
     color: rgb(255, 255, 255); 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
     padding: 10px 20px; 
     z-index: 1000; 
     border-radius: 20px;
 }
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
 .player-info {
     display: flex;
-    flex-direction: column; /* Para que el nombre y el país estén uno debajo del otro */
-    align-items: flex-start; /* Alinea el texto a la izquierda */
-    font-size: 16px; /* Tamaño de fuente para el nombre y el país */
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
 }
 
 #player-name {
-    font-weight: bold; /* Hace que el nombre sea más destacado */
-    font-size: 18px; /* Tamaño del nombre */
+    font-weight: bold;
+    font-size: 18px;
 }
 
 #player-country {
-    font-style: italic; /* El país en cursiva */
-    font-size: 14px; /* Tamaño del país */
+    font-style: italic;
+    font-size: 14px;
 }
 
 .score-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
 }
-
-#player-score {
-    font-size: 24px; /* Tamaño del puntaje */
-    font-weight: bold; /* Hace que el puntaje sea destacado */
-}
-
-.score-circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; /* Hace el círculo redondo */
-    background-color: #ff5722; /* Color de fondo del círculo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: white;
-    margin-top: 5px;
-}
-
 
 
 body {
