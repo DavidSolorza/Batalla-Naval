@@ -112,6 +112,34 @@ function startGame() {
     createMatrix(boardAttack, matrixAttack, checkShot, "pc");
     window.selectPositionRandom();
     document.querySelector("#button").disabled = true;
+    exportBoardsAsText();
+}
+
+
+function exportBoardsAsText() {
+    function mapMatrix(matrix) {
+        return matrix.map(row =>
+            row.map(cell => cell === "ship" ? "⬜" : "🟦")
+        );
+    }
+
+    function matrixToText(matrix) {
+        return matrix.map(row => row.join("")).join("\n");
+    }
+
+    const playerMatrix = mapMatrix(matrix);
+    const pcMatrix = mapMatrix(matrixAttack);
+
+    const textContent = `=== PLAYER ===\n${matrixToText(playerMatrix)}\n\n=== PC ===\n${matrixToText(pcMatrix)}`;
+
+    const blob = new Blob([textContent], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "tableros.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
 }
 
 document.querySelector(".estrategiaBtn").addEventListener("click", () => {
