@@ -54,39 +54,73 @@ for (let i = 0; i < position.length; i++) {
 }
 
 function selectPosition(event) {
-    if (ship.quantity > 0) {
-        let grid = event.target;
-        let gridID = grid.id.split(",");
-        let x = parseInt(gridID[0]);
-        let y = parseInt(gridID[1]);
-        
-        if (ship.position === "horizontal") {
-            if (y + (ship.size - 1) < size) {
-                for (let i = y; i < y + ship.size; i++) {
-                    matrix[x][i] = "ship";
-                    document.getElementById(`${x},${i},player`).classList.add("selected", `ship-${ship.size}`);
-                }
-                quantityShip[ship.id] -= 1;
-                ship = {};
-            } else {
-                alert("Selecciona una posición válida");
-            }
-        } else if (ship.position === "vertical") {
-            if (x + (ship.size - 1) < size) {
-                for (let i = x; i < x + ship.size; i++) {
-                    matrix[i][y] = "ship";
-                    document.getElementById(`${i},${y},player`).classList.add("selected", `ship-${ship.size}`);
-                }
-                quantityShip[ship.id] -= 1;
-                ship = {};
-            } else {
-                alert("Selecciona una posición válida");
+    if (ship.quantity <= 0) {
+        alert("Debes seleccionar un barco disponible");
+        return;
+    }
+
+    let grid = event.target;
+    let gridID = grid.id.split(",");
+    let x = parseInt(gridID[0]);
+    let y = parseInt(gridID[1]);
+
+    let canPlace = true;
+
+    // Validar que el barco quepa y no se sobreponga
+    if (ship.position === "horizontal") {
+        if (y + ship.size > size) {
+            alert("Selecciona una posición válida (fuera de límites)");
+            return;
+        }
+
+        // Verificar superposición
+        for (let i = 0; i < ship.size; i++) {
+            if (matrix[x][y + i] === "ship") {
+                canPlace = false;
+                break;
             }
         }
-    } else {
-        alert("Debes seleccionar un barco disponible");
+
+        if (!canPlace) {
+            alert("Ya hay un barco en esa posición");
+            return;
+        }
+
+        // Colocar barco
+        for (let i = 0; i < ship.size; i++) {
+            matrix[x][y + i] = "ship";
+            document.getElementById(`${x},${y + i},player`).classList.add("selected", `ship-${ship.size}`);
+        }
+    } else if (ship.position === "vertical") {
+        if (x + ship.size > size) {
+            alert("Selecciona una posición válida (fuera de límites)");
+            return;
+        }
+
+        // Verificar superposición
+        for (let i = 0; i < ship.size; i++) {
+            if (matrix[x + i][y] === "ship") {
+                canPlace = false;
+                break;
+            }
+        }
+
+        if (!canPlace) {
+            alert("Ya hay un barco en esa posición");
+            return;
+        }
+
+        // Colocar barco
+        for (let i = 0; i < ship.size; i++) {
+            matrix[x + i][y] = "ship";
+            document.getElementById(`${x + i},${y},player`).classList.add("selected", `ship-${ship.size}`);
+        }
     }
+
+    quantityShip[ship.id]--;
+    ship = {};
 }
+
 
 // Iniciar el juego y crear el tablero de la PC
 function startGame() {
