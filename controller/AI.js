@@ -93,6 +93,10 @@ function checkShot(event) {
     let y = parseInt(gridID[1]);
     const explosion = document.getElementById("explosion");
     const agua = document.getElementById("agua");
+
+    if (matrixAttack[x][y] === "hit" || matrixAttack[x][y] === "miss") {
+        return; 
+    }
     
     if (matrixAttack[x][y] === "ship") {
         matrixAttack[x][y] = "hit";
