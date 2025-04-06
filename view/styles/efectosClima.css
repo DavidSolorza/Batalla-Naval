@@ -1,0 +1,23 @@
+body.lluvia-ligera {
+    background-image: url('../../assents/lluvia.gif');
+    background-size: cover;
+    color: white;
+}
+
+body.tormenta {
+    background-image: url('../../assents/lluviaTrueno.gif');
+    background-size: cover;
+    color: white;
+}
+
+body.nublado {
+    background-image: url('../../assents/nublado.gif');
+    background-size: cover;
+    color: white;
+}
+
+body.sol {
+    background-image: url('../../assents/soleado.gif');
+    background-size: cover;
+    color: black;
+}

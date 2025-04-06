@@ -73,10 +73,38 @@ async function mostrarClima(ciudad) {
                 🌡️ ${temperatura}°C<br>
                 💨 ${viento} km/h<br>
                 ☁️ ${clima}
+                <span id="estadoClima" style="display: none;">${clima}</span>
             </div>
         `;
 
         document.body.appendChild(climaDiv);
+
+        // Código para cambiar fondo y sonido según el clima
+        const estado = clima.toLowerCase();
+        const body = document.body;
+        const sonido = document.getElementById('sonidoFondo');
+
+        if (estado.includes('lluvia ligera') || estado.includes('lluvia') || estado.includes('llovizna')|| estado.includes('brisita')) {
+            body.className = 'lluvia-ligera';
+            sonido.src = '../assents/sonidos/lluvia.mp3';
+        } else if (estado.includes('tormenta') || estado.includes('lluvia fuerte')) {
+            body.className = 'tormenta';
+            sonido.src = '../assents/sonidos/tormenta.mp3';
+        } else if (estado.includes('nublado') || estado.includes('nubes')|| estado.includes('nuboso')) {
+            body.className = 'nublado';
+            sonido.src = '../assents/sonidos/nublado.mp3';
+        } else if (estado.includes('soleado') || estado.includes('cielo claro')) {
+            body.className = 'sol';
+            sonido.src = '../assents/sonidos/soleado.mp3';
+        } else {
+            body.className = '';
+            sonido.src = '';
+        }
+
+        sonido.play().catch(() => {
+            console.log('🎧 Reproducción bloqueada hasta que el usuario interactúe.');
+        });
+
     } catch (error) {
         console.error("❌ Error obteniendo el clima:", error);
     }
