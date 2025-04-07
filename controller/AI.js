@@ -196,6 +196,12 @@ function shotPc() {
 
 // 🔥 **Buscar la siguiente casilla en modo caza**
 function getNextTarget() {
+    if (lastHits.length === 0) {
+        huntingMode = false;
+        directions = ["up", "down", "left", "right"];
+        currentDirection = null;
+        return getSmartPatternShot(); // vuelve a modo exploración
+    }
     let [x, y] = lastHits[lastHits.length - 1]; // Último golpe
 
     if (currentDirection === null) {
