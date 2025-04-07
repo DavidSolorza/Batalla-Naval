@@ -179,8 +179,6 @@ body {
     align-items: center;
     min-height: 100vh;
     position: relative;
-}
-body {
     background-image: url('../../assents/fondoModoJuego.png');
     background-size: cover;
     color: white;
