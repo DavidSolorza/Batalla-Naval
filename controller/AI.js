@@ -1,5 +1,5 @@
 
-
+let turnoJugador = true; 
 window.selectPositionRandom = function() {
     for (let i = 0; i < quantityShipPC.length; i++) {
         while (quantityShipPC[i] > 0) {
@@ -87,6 +87,7 @@ class Puntuacion {
 const puntuacion = new Puntuacion();
 
 function checkShot(event) {
+    if (!turnoJugador) return; 
     let grid = event.target;
     let gridID = grid.id.split(",");
     let x = parseInt(gridID[0]);
@@ -111,6 +112,7 @@ function checkShot(event) {
         agua.currentTime = 1;
         agua.play();
         puntuacion.fallo(matrixAttack, x, y);
+        turnoJugador = false;
         shotPc();
     }
 }
@@ -188,6 +190,7 @@ function shotPc() {
             if (huntingMode) {
                 changeDirection(); // Cambiar dirección si falla en modo caza
             }
+            turnoJugador = true;
         }
     }, 500); // ⏳ Espera 500ms entre cada disparo
 }
