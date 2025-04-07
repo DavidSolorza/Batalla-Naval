@@ -68,9 +68,7 @@
     font-weight: bold;
 }
 
-.ship-1 { 
-    background-color: #33FF57 ; 
-}
+
 .ship-2 { 
     background-color: #3357FF ; 
 }
@@ -85,6 +83,19 @@
 }
 .hit{
     background-color: red !important;
+}
+
+.hit-2{
+    background-color: rgb(209, 231, 19) !important;
+}
+.hit-3{
+    background-color: rgb(0, 157, 255) !important;
+}
+.hit-4{
+    background-color: rgb(255, 38, 0) !important;
+}
+.hit-5{
+    background-color: rgb(153, 9, 214) !important;
 }
 .miss{
     background-color: gray;
