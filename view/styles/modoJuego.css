@@ -1,0 +1,54 @@
+body {
+    background-image: url("../../assents/fondoModoJuego.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+.menu-container {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.menu-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #006064;
+    margin-bottom: 20px;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 15px 0;
+}
+
+.menu-items a {
+    text-decoration: none;
+    background-color: #004d40;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    transition: background 0.3s;
+    display: block;
+}
+
+.menu-items a:hover {
+    background-color: #00838f;
+}
+
+.icons{
+    width: 27px; /* Reduce el tamaño del icono */
+    height: 27px;
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+}

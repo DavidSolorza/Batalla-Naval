@@ -1,16 +1,17 @@
-.menu-container {
-    background-color: rgba(128, 222, 234, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
-    width: 80%;
-    margin: 20px 0;
-    opacity: 0.97;
+body {
+    background-image: url("../../assents/fondoInstrucciones.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
 }
-
-h2, h3 {
-    color: #006064;
+.menu-container {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 p {
@@ -21,8 +22,8 @@ p {
 
 section {
     margin-bottom: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.6);    
     border-radius: 10px;
 }
 
@@ -59,9 +60,6 @@ ul li {
     font-size: 1.2em;
     transition: background 0.3s;
     display: block;
-}
-.menu-items a:hover {
-    background-color: #00838f;
 }
 
 .menu-title {

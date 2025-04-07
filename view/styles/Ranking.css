@@ -1,11 +1,18 @@
 /* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
+    background-image: url("../../assents/fondoRanking.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
 }
 
 h1 {
     font-size: 2rem;
     font-weight: bold;
+    color: wheat;
 }
 
 /* Contenedor de la tabla */
