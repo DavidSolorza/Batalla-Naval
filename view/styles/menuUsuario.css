@@ -40,10 +40,12 @@ body {
     font-size: 1.2em;
     transition: background 0.3s;
     display: block;
+    opacity: 0.8; 
 }
 
 .menu-items a:hover {
-    background-color: #00838f;
+    background-color: #0a6e77;
+    opacity: 1;
 }
 
 .icons{

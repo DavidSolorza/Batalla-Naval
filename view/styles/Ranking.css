@@ -13,6 +13,12 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
     color: wheat;
+    background-color: #302828;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    margin: 20px auto;
+    opacity: 0.85;
 }
 
 /* Contenedor de la tabla */
@@ -30,18 +36,18 @@ h1 {
     border-collapse: collapse;
     background-color: #4b4949ce ;
     color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    opacity: 0.85;
 }
 
 /* Estilos para las celdas */
 .ranking-table th,
 .ranking-table td {
     padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #007bff ;
-    opacity: 0.;
+    text-align: center; ;
+    opacity: 0.88;
 }
 
 /* Estilos para el encabezado */
@@ -101,7 +107,7 @@ h1 {
 }
 
 .bandera {
-    width: 30px;   
+    width: 35px;   
     height: auto;  
     border-radius: 5px; 
     display: block; 
@@ -114,7 +120,3 @@ h1 {
     gap: 5px; 
 }
 
-.bandera {
-    width: 25px;
-    height: auto;
-}
