@@ -109,9 +109,7 @@ h1 {
 }
 
 .pais-container {
-    display: flex;
     align-items: center;
-    gap: 5px; 
 }
 
 .bandera {

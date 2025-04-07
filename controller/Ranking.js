@@ -47,9 +47,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <td>${item.nick_name || "Sin nombre"}</td>
                 <td>${item.score ?? "0"}</td>
                 <td class="pais-container">
-                    <span>${countryName}</span>
-                    <img src="${banderaURL}" alt="${countryName}" class="bandera"/>
+                    <span>${countryName}</span>                    
                 </td>
+                <td>
+                    <img src="${banderaURL}" alt="${countryName}" class="bandera"/></td>
             `;
         
             tabla.appendChild(fila);
