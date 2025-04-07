@@ -6,16 +6,18 @@
     <title>Partida</title>
     <link rel="icon" type="image/png" href="../assents/a0f7d469f729a332dfa5f8b1ccd60a2a.png">
     <link rel="stylesheet" href="styles/tablero.css">
-    <link rel="stylesheet" href="styles/efectosClima.css">
+    <link rel="stylesheet" href="styles/background.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <audio id="explosion" src="../assents/sonidos/Explosion.mp3" preload="auto"></audio>
     <audio id="agua" src="../assents/sonidos/Agua.mp3" preload="auto"></audio>
     <audio id="sonidoFondo" loop autoplay></audio>
+    <script src="../controller/burbujas.js"></script>
 </head>
 
 <body>
+    <div class="burbujas"></div>
     <header>
         <div class="header-content">
             <div class="player-info">
@@ -42,8 +44,9 @@
                 </div>
             </div>
         </div>
-        <h4>Tus naves:</h4>
+       
         <div id="ships" class="row">
+            <h4 class="col-12 col-md-12">Tus naves:</h4>
             <div class="col-3 col-md-3"> 
                 <div>
                     <span>Portaviones</span></br>
