@@ -10,6 +10,13 @@
     cursor: url(../../assents/cursor_32.png) 16 16, crosshair;
 }
 
+.board-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */

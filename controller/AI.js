@@ -117,7 +117,6 @@ function checkShot(event) {
     }
 }
 
-
 let lastHits = []; // Guarda los golpes recientes en un barco
 let sunkShips = []; // Guarda las coordenadas de barcos hundidos
 let hitShips = {}; // Guarda barcos golpeados pero no hundidos
