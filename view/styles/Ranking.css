@@ -30,23 +30,22 @@ h1 {
     border-collapse: collapse;
     background-color: #4b4949ce ;
     color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    opacity: 0.85;
 }
 
 /* Estilos para las celdas */
 .ranking-table th,
 .ranking-table td {
     padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #007bff ;
-    opacity: 0.;
+    text-align: center; ;
+    opacity: 0.88;
 }
 
 /* Estilos para el encabezado */
 .ranking-table thead {
-    background-color: #302828;
+    background-color: #1b1717a4;
 }
 
 .ranking-table th {
@@ -101,7 +100,7 @@ h1 {
 }
 
 .bandera {
-    width: 30px;   
+    width: 35px;   
     height: auto;  
     border-radius: 5px; 
     display: block; 
@@ -112,7 +111,3 @@ h1 {
     align-items: center;
 }
 
-.bandera {
-    width: 25px;
-    height: auto;
-}
