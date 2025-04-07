@@ -90,15 +90,12 @@ async function mostrarClima(ciudad) {
         } else if (estado.includes('tormenta') || estado.includes('lluvia fuerte')) {
             body.className = 'tormenta';
             sonido.src = '../assents/sonidos/tormenta.mp3';
-        } else if (estado.includes('nublado') || estado.includes('nubes')|| estado.includes('nuboso')) {
+        } else if (estado.includes('nubes dispersas') || estado.includes('despejado')) {
+            body.className = 'despejado';
+            sonido.src = '../assents/sonidos/nublado.mp3';
+        } else if (estado.includes('nublado') || estado.includes('nuboso') || estado.includes('nubes')) {
             body.className = 'nublado';
             sonido.src = '../assents/sonidos/nublado.mp3';
-        } else if (estado.includes('soleado') || estado.includes('cielo claro')) {
-            body.className = 'sol';
-            sonido.src = '../assents/sonidos/soleado.mp3';
-        } else {
-            body.className = '';
-            sonido.src = '';
         }
 
         sonido.play().catch(() => {

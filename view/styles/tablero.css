@@ -180,15 +180,20 @@ body {
     min-height: 100vh;
     position: relative;
 }
+body {
+    background-image: url('../../assents/fondoModoJuego.png');
+    background-size: cover;
+    color: white;
+}
 
 body.lluvia-ligera {
-    background-image: url('../../assents/lluvia.gif');
+    background-image: url('../../assents/lluvia.png');
     background-size: cover;
     color: white;
 }
 
 body.tormenta {
-    background-image: url('../../assents/lluviaTrueno.gif');
+    background-image: url('../../assents/tormenta.png');
     background-size: cover;
     color: white;
 }
@@ -199,6 +204,11 @@ body.nublado {
     color: white;
 }
 
+body.despejado {
+    background-image: url('../../assents/despejado.png');
+    background-size: cover;
+    color: white;
+}
 body.sol {
     background-image: url('../../assents/soleado.png');
     background-size: cover;
