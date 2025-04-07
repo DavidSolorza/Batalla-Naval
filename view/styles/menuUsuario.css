@@ -58,3 +58,12 @@ label{
     font-size: 1em;
     font-weight: bold;
 }
+
+#tamanio,#nacionalidad,#cityName,#nombre{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    opacity: 0.8;
+}

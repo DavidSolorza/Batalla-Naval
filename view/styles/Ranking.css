@@ -13,12 +13,6 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
     color: wheat;
-    background-color: #302828;
-    border-radius: 15px;
-    padding: 10px;
-    text-align: center;
-    margin: 20px auto;
-    opacity: 0.85;
 }
 
 /* Contenedor de la tabla */
@@ -38,7 +32,6 @@ h1 {
     color: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     opacity: 0.85;
 }
 
@@ -52,7 +45,7 @@ h1 {
 
 /* Estilos para el encabezado */
 .ranking-table thead {
-    background-color: #302828;
+    background-color: #1b1717a4;
 }
 
 .ranking-table th {
